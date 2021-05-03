@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "outDir": "./build",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -17,10 +18,17 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
+    "declaration": true,
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "./types/definitions.d.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./build",
+    "./webpack.config.js",
   ]
 }
