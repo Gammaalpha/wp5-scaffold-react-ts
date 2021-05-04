@@ -26,4 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 
-.vscode/snipsnap.code-snippets.json
+.vscode/snipsnap.code-snippets
