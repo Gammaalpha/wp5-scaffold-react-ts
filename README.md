@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and using [Webpack 5](https://webpack.js.org/).
 
-A full working example with both shell and remote can be viewed at [microfrontend-webpack](https://github.com/Gammaalpha/microfrontend-webpack) repository.
+A full working example with both shell and remote can be viewed at [wp5-react-host-remote-example](https://github.com/Gammaalpha/wp5-react-host-remote-example) repository.
 
 ## How to use this repository
 
