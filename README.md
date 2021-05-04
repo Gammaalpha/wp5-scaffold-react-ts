@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and using [Webpack 5](https://webpack.js.org/).
 
+A full working example with both shell and remote can be viewed at [microfrontend-webpack](https://github.com/Gammaalpha/microfrontend-webpack) repository.
+
 ## How to use this repository
 
 You can use this repository to setup the module federation host or remote depending on what you are consuming or exposing.
