@@ -3,7 +3,26 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 const deps = require("./package.json").dependencies;
+const sharedDeps = ["react", "react-dom"];
 const Dotenv = require("dotenv-webpack");
+
+/**
+ * Creates a singleton object with dependencies with their required version
+ */
+const setSingletonSharedDeps = () => {
+  console.log("Setting singleton shared deps...");
+  return sharedDeps.reduce(
+    (acc, curr) =>
+      Object.assign(acc, {
+        [curr]: {
+          eager: true,
+          singleton: true,
+          requiredVersion: deps[curr],
+        },
+      }),
+    {}
+  );
+};
 
 module.exports = (env) => {
   console.log("Target: ", env.target);
@@ -93,16 +112,7 @@ module.exports = (env) => {
          */
         shared: {
           ...deps,
-          react: {
-            eager: true,
-            singleton: true,
-            requiredVersion: deps.react,
-          },
-          "react-dom": {
-            eager: true,
-            singleton: true,
-            requiredVersion: deps["react-dom"],
-          },
+          ...setSingletonSharedDeps(),
         },
       }),
       new HtmlWebpackPlugin({
