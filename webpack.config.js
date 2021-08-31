@@ -3,11 +3,12 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 const deps = require("./package.json").dependencies;
-const sharedDeps = ["react", "react-dom"];
+const sharedDeps = ["react", "react-dom"]; // add more packages to this array to share across remotes  and shell
 const Dotenv = require("dotenv-webpack");
 
 /**
  * Creates a singleton object with dependencies with their required version
+ * @returns object of objects
  */
 const setSingletonSharedDeps = () => {
   console.log("Setting singleton shared deps...");
