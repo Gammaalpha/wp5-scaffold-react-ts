@@ -3,7 +3,16 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 const deps = require("./package.json").dependencies;
-const sharedDeps = ["react", "react-dom"]; // add more packages to this array to share across remotes  and shell
+const sharedDeps = [
+  "react",
+  "react-dom",
+  "styled-components",
+  "react-redux",
+  "react-router-dom",
+  "@reduxjs/toolkit",
+  "typescript",
+  "prop-types",
+]; // add more packages to this array to share across remotes  and shell
 const Dotenv = require("dotenv-webpack");
 
 /**
